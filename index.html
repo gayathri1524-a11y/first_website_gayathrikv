@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10 Biology Masterclass | Board Exam Prep</title>
+    <meta name="description" content="Master CBSE Class 10 Biology with interactive simulations, quizzes, worksheets, and comprehensive question banks.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    <div class="bg-shape shape-3"></div>
+
+    <nav class="navbar glass">
+        <div class="logo">
+            <i class="fa-solid fa-leaf"></i> BioMaster 10
+        </div>
+        <ul class="nav-links">
+            <li><a href="#simulation" class="active" data-target="simulation">Simulation</a></li>
+            <li><a href="#quiz" data-target="quiz">Quiz</a></li>
+            <li><a href="#worksheet" data-target="worksheet">Worksheet</a></li>
+            <li><a href="#qbank" data-target="qbank">Question Bank</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header class="hero glass fade-in">
+            <div class="hero-badge">CBSE 2026 Ready</div>
+            <h1>Score <span class="highlight">100/100</span> in Science</h1>
+            <p>Interactive biology simulations, competency-based quizzes, and expert worksheets tailored for the latest CBSE Class 10 board exams.</p>
+        </header>
+
+        <section id="simulation" class="tab-content active-section fade-in">
+            <h2><i class="fa-solid fa-microscope"></i> Interactive Simulation: Life Processes</h2>
+            <p class="section-desc">Explore the human digestive system. Click on the organs to understand their function and secreted enzymes.</p>
+            <div class="simulation-container glass">
+                <div class="sim-visual">
+                    <div class="diagram" id="digestive-system">
+                        <div class="human-body-outline"></div>
+                        <div class="organ mouth" data-organ="mouth">Mouth</div>
+                        <div class="organ esophagus" data-organ="esophagus">Esophagus</div>
+                        <div class="organ stomach" data-organ="stomach">Stomach</div>
+                        <div class="organ liver" data-organ="liver">Liver</div>
+                        <div class="organ pancreas" data-organ="pancreas">Pancreas</div>
+                        <div class="organ small-intestine" data-organ="small-intestine">Small Intestine</div>
+                        <div class="organ large-intestine" data-organ="large-intestine">Large Intestine</div>
+                    </div>
+                </div>
+                <div class="sim-info glass-inner" id="sim-info-panel">
+                    <div class="sim-placeholder">
+                        <i class="fa-solid fa-hand-pointer fa-3x pulse-anim"></i>
+                        <h3>Select an organ</h3>
+                        <p>Click on any part of the digestive system to reveal its biological function.</p>
+                    </div>
+                    <div class="sim-details hidden" id="sim-details">
+                        <h3 id="organ-title">Organ Name</h3>
+                        <div class="tag-container">
+                            <span class="tag tag-blue" id="organ-enzyme">Enzyme</span>
+                            <span class="tag tag-green" id="organ-process">Process</span>
+                        </div>
+                        <p id="organ-desc">Description goes here.</p>
+                        <div class="board-tip">
+                            <strong><i class="fa-solid fa-star"></i> Board Exam Tip:</strong>
+                            <p id="organ-tip">Tip goes here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="tab-content fade-in">
+            <h2><i class="fa-solid fa-clipboard-question"></i> Competency-Based Quiz</h2>
+            <p class="section-desc">Test your understanding with assertion-reasoning and application-based questions.</p>
+            <div class="quiz-container glass">
+                <div id="quiz-start">
+                    <h3>Chapter: Life Processes & Control and Coordination</h3>
+                    <p>10 carefully curated questions to test your analytical skills.</p>
+                    <button id="start-quiz-btn" class="btn btn-primary">Start Quiz</button>
+                </div>
+                <div id="quiz-active" class="hidden">
+                    <div id="quiz-header">
+                        <div class="progress-bar-bg"><div class="progress-bar-fill" id="quiz-progress"></div></div>
+                        <div class="quiz-meta">
+                            <span id="question-tracker">Q: 1/10</span>
+                            <span id="score-tracker">Score: 0</span>
+                        </div>
+                    </div>
+                    <div id="question-container">
+                        <h3 id="question-text">Loading question...</h3>
+                        <div id="options-container"></div>
+                    </div>
+                    <div class="quiz-footer">
+                        <p id="feedback-msg" class="hidden"></p>
+                        <button id="next-btn" class="btn btn-secondary hidden">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div id="quiz-result" class="hidden text-center">
+                    <div class="trophy-icon"><i class="fa-solid fa-trophy"></i></div>
+                    <h3>Quiz Completed!</h3>
+                    <h1 id="final-score" class="highlight text-huge">8/10</h1>
+                    <p id="result-message">Great job! You have a strong grasp of these concepts.</p>
+                    <button id="restart-btn" class="btn btn-primary mt-20">Restart Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="worksheet" class="tab-content fade-in">
+            <div class="section-header-flex">
+                <div>
+                    <h2><i class="fa-solid fa-file-pen"></i> Practice Worksheet</h2>
+                    <p class="section-desc">Interactive digital worksheet. Type your answers and compare with the ideal board answer.</p>
+                </div>
+                <button class="btn btn-outline" onclick="window.print()"><i class="fa-solid fa-print"></i> Print</button>
+            </div>
+            
+            <div class="worksheet-container">
+                <div class="worksheet-item glass">
+                    <span class="badge badge-purple">3 Marks</span>
+                    <h4>Q1: Differentiate between aerobic and anaerobic respiration.</h4>
+                    <textarea class="ws-textarea" placeholder="Type your answer here..."></textarea>
+                    <button class="btn btn-sm show-ans-btn">Reveal Ideal Answer</button>
+                    <div class="answer hidden">
+                        <table class="diff-table">
+                            <tr>
+                                <th>Aerobic Respiration</th>
+                                <th>Anaerobic Respiration</th>
+                            </tr>
+                            <tr>
+                                <td>Takes place in the presence of oxygen.</td>
+                                <td>Takes place in the absence of oxygen.</td>
+                            </tr>
+                            <tr>
+                                <td>Complete breakdown of glucose occurs.</td>
+                                <td>Incomplete breakdown of glucose occurs.</td>
+                            </tr>
+                            <tr>
+                                <td>End products are CO₂ and water.</td>
+                                <td>End products are ethanol and CO₂ (in yeast) or lactic acid (in muscles).</td>
+                            </tr>
+                            <tr>
+                                <td>Large amount of energy is released (38 ATP).</td>
+                                <td>Small amount of energy is released (2 ATP).</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="worksheet-item glass">
+                    <span class="badge badge-purple">2 Marks</span>
+                    <h4>Q2: Why are the walls of ventricles thicker than the walls of the atria?</h4>
+                    <textarea class="ws-textarea" placeholder="Type your answer here..."></textarea>
+                    <button class="btn btn-sm show-ans-btn">Reveal Ideal Answer</button>
+                    <div class="answer hidden">
+                        <p>Ventricles have to pump blood to various organs with high pressure, whereas atria just receive blood and pump it to the ventricles. Hence, the walls of the ventricles are thicker and more muscular to withstand the high pressure.</p>
+                    </div>
+                </div>
+
+                <div class="worksheet-item glass">
+                    <span class="badge badge-purple">5 Marks</span>
+                    <h4>Q3: (a) Draw a well-labelled diagram of a neuron. (b) Explain the mechanism of transmission of nerve impulses.</h4>
+                    <div class="upload-area">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p>Draw on paper and upload a photo, or visualize it.</p>
+                    </div>
+                    <button class="btn btn-sm show-ans-btn">Reveal Ideal Answer</button>
+                    <div class="answer hidden">
+                        <p><strong>(a) Neuron Diagram Labels:</strong> Dendrite, Cell Body (Soma), Nucleus, Axon, Myelin Sheath, Nerve Ending.</p>
+                        <p><strong>(b) Mechanism:</strong></p>
+                        <ul>
+                            <li>Information is acquired at the end of the dendritic tip of a nerve cell.</li>
+                            <li>This sets off a chemical reaction that creates an electrical impulse.</li>
+                            <li>This impulse travels from the dendrite to the cell body, and then along the axon to its end.</li>
+                            <li>At the end of the axon, the electrical impulse sets off the release of some chemicals (neurotransmitters).</li>
+                            <li>These chemicals cross the gap (synapse) and start a similar electrical impulse in a dendrite of the next neuron.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="qbank" class="tab-content fade-in">
+            <h2><i class="fa-solid fa-book"></i> Chapter-wise Question Bank (PYQs)</h2>
+            <p class="section-desc">Important previous year questions mapped to the latest CBSE marking scheme.</p>
+            
+            <div class="qbank-filters glass">
+                <button class="filter-btn active" data-filter="all">All Questions</button>
+                <button class="filter-btn" data-filter="1m">1 Mark (MCQ/VSA)</button>
+                <button class="filter-btn" data-filter="3m">3 Marks (SA)</button>
+                <button class="filter-btn" data-filter="5m">5 Marks (LA)</button>
+            </div>
+
+            <div class="qbank-list">
+                <!-- 1 Mark -->
+                <div class="q-card glass" data-marks="1m">
+                    <div class="q-header">
+                        <span class="badge badge-1m">1 Mark</span>
+                        <span class="year-badge">CBSE 2023</span>
+                    </div>
+                    <p class="q-text">Which of the following equations is the correct summary of photosynthesis?</p>
+                    <button class="btn btn-text toggle-ans"><i class="fa-solid fa-eye"></i> View Answer</button>
+                    <div class="q-ans hidden">
+                        <p><strong>Answer:</strong> 6CO₂ + 12H₂O ⟶ C₆H₁₂O₆ + 6O₂ + 6H₂O (in presence of Sunlight and Chlorophyll)</p>
+                    </div>
+                </div>
+
+                <div class="q-card glass" data-marks="1m">
+                    <div class="q-header">
+                        <span class="badge badge-1m">1 Mark</span>
+                        <span class="year-badge">CBSE 2020</span>
+                    </div>
+                    <p class="q-text">What is the function of the enzyme pepsin in the stomach?</p>
+                    <button class="btn btn-text toggle-ans"><i class="fa-solid fa-eye"></i> View Answer</button>
+                    <div class="q-ans hidden">
+                        <p><strong>Answer:</strong> Pepsin is a protein-digesting enzyme that acts in an acidic medium to break down proteins into peptones/smaller peptides.</p>
+                    </div>
+                </div>
+
+                <!-- 3 Marks -->
+                <div class="q-card glass" data-marks="3m">
+                    <div class="q-header">
+                        <span class="badge badge-3m">3 Marks</span>
+                        <span class="year-badge">CBSE 2022</span>
+                    </div>
+                    <p class="q-text">Explain the process of double circulation in human beings. Why is it necessary?</p>
+                    <button class="btn btn-text toggle-ans"><i class="fa-solid fa-eye"></i> View Answer</button>
+                    <div class="q-ans hidden">
+                        <p><strong>Answer:</strong></p>
+                        <ol>
+                            <li>The blood passes through the heart twice during one complete cycle in the body. This is called double circulation.</li>
+                            <li>It involves pulmonary circulation (between heart and lungs) and systemic circulation (between heart and body parts).</li>
+                            <li><strong>Necessity:</strong> It ensures strict separation of oxygenated and deoxygenated blood, providing a highly efficient supply of oxygen to the body, which is essential for warm-blooded animals (birds and mammals) with high energy needs to maintain their body temperature.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="q-card glass" data-marks="3m">
+                    <div class="q-header">
+                        <span class="badge badge-3m">3 Marks</span>
+                        <span class="year-badge">CBSE Sample Paper</span>
+                    </div>
+                    <p class="q-text">What are plant hormones? Name the plant hormone responsible for (i) phototropism (ii) wilting of leaves.</p>
+                    <button class="btn btn-text toggle-ans"><i class="fa-solid fa-eye"></i> View Answer</button>
+                    <div class="q-ans hidden">
+                        <p><strong>Answer:</strong></p>
+                        <p>Plant hormones (phytohormones) are chemical compounds synthesized in minute quantities by plants, which regulate their growth, development, and responses to the environment.</p>
+                        <ul>
+                            <li><strong>(i) Phototropism:</strong> Auxin (synthesized at the shoot tip, helps the cells to grow longer).</li>
+                            <li><strong>(ii) Wilting of leaves:</strong> Abscisic acid (a growth inhibitor).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5 Marks -->
+                <div class="q-card glass" data-marks="5m">
+                    <div class="q-header">
+                        <span class="badge badge-5m">5 Marks</span>
+                        <span class="year-badge">CBSE 2019</span>
+                    </div>
+                    <p class="q-text">Draw a diagram of the human excretory system and label Kidney, Ureter, Urinary Bladder, and Urethra. Explain the function of nephrons.</p>
+                    <button class="btn btn-text toggle-ans"><i class="fa-solid fa-eye"></i> View Answer</button>
+                    <div class="q-ans hidden">
+                        <p><strong>Answer:</strong></p>
+                        <p><em>(Diagram showing the required labels is required for 2 marks)</em></p>
+                        <p><strong>Function of Nephron (3 marks):</strong></p>
+                        <ol>
+                            <li><strong>Ultrafiltration:</strong> Blood enters the glomerulus under high pressure. Water, glucose, amino acids, and nitrogenous wastes (urea) are filtered into Bowman's capsule.</li>
+                            <li><strong>Selective Reabsorption:</strong> As the filtrate passes through the tubular part of the nephron, useful substances like glucose, amino acids, salts, and a major amount of water are selectively reabsorbed into the surrounding blood capillaries.</li>
+                            <li><strong>Tubular Secretion:</strong> Additional wastes like excess ions (K+, H+) are secreted from the blood into the tubule. The final liquid formed is urine, which passes into the collecting duct.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass text-center">
+        <p>&copy; 2026 BioMaster 10. Designed for CBSE Class 10 Students to score 100/100.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
